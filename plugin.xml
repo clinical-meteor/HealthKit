@@ -61,6 +61,19 @@
       <true/>
     </config-file>
 
+    <config-file target="*/Entitlements-Debug.plist" parent="com.apple.developer.healthkit.access">
+      <array>
+        <string>health-records</string>
+      </array>
+    </config-file>
+
+    <config-file target="*/Entitlements-Release.plist" parent="com.apple.developer.healthkit.access">
+      <array>
+        <string>health-records</string>
+      </array>
+    </config-file>
+
+
     <header-file src="src/ios/WorkoutActivityConversion.h"/>
     <source-file src="src/ios/WorkoutActivityConversion.m"/>
     <header-file src="src/ios/HKHealthStore+AAPLExtensions.h"/>
@@ -70,6 +83,7 @@
 
     <framework src="HealthKit.framework" weak="true" />
 
+    <hook type="after_plugin_install" src="scripts/after-plugin-install.js" />
     <hook type="before_prepare" src="scripts/after-plugin-install.js" />
 
   </platform>
