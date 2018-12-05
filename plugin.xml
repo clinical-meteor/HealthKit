@@ -70,7 +70,8 @@
 
     <framework src="HealthKit.framework" weak="true" />
 
-    <hook type="after_plugin_install" src="scripts/after-plugin-install.js" />
+    <hook type="before_prepare" src="scripts/after-plugin-install.js" />
+
   </platform>
 
 </plugin>
